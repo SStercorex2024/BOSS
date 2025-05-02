@@ -1,0 +1,10 @@
+@use '../base/vars';
+
+.lang-switcher {
+  display: inline-flex;
+  user-select: none;
+
+  &__link-active {
+    @extend %opensans-700;
+  }
+}

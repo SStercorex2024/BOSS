@@ -1,0 +1,16 @@
+//base
+@use "base/vars";
+@use "base/mixins";
+@use "base/reset";
+@use "base/fonts";
+@use "base/global";
+@use "base/container";
+@use "base/base";
+
+//blocks
+@use "blocks/header";
+@use "blocks/menu";
+@use "blocks/logo";
+@use "blocks/discount";
+@use "blocks/lang-switcher";
+@use "blocks/utility-icons";

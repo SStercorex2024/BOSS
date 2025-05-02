@@ -1,0 +1,13 @@
+@use '../base/vars';
+
+.discount {
+  background-color: vars.$color-light-gray;
+  font-size: 11px;
+  color: vars.$color-gray;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
+}
