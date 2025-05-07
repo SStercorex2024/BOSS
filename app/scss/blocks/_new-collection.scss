@@ -1,0 +1,57 @@
+.new-collection {
+  padding: 150px 0 90px;
+
+  &__wrapper {
+    display: flex;
+    padding: 0 40px 0;
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 23px;
+    max-width: 440px;
+  }
+
+  &__title {
+    padding-bottom: 23px;
+    width: 417px;
+  }
+
+  &__text {
+    width: 404px;
+  }
+
+  &__description {
+    &:not(:last-of-type) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__link {
+    margin-top: auto;
+    align-self: baseline;
+    padding-inline: 65.5px;
+  }
+
+  &__img {
+    padding-top: 75px;
+  }
+
+  &__box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding-right: 40px;
+  }
+
+  &__caption {
+    width: 330px;
+    padding: 67px 0 0 40px;
+  }
+}

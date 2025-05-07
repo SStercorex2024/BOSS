@@ -1,0 +1,16 @@
+@use '../base/vars';
+
+.title {
+  @extend %lora-400;
+
+  &--large {
+    font-size: 75px;
+    line-height: 1.2;
+    color: vars.$color-black;
+  }
+
+  &--medium {
+    font-size: 45px;
+    color: vars.$color-black;
+  }
+}

@@ -4,6 +4,28 @@
   display: inline-flex;
   user-select: none;
 
+  &__link {
+    position: relative;
+
+    &:not(.lang-switcher__link-active)::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: vars.$color-black;
+      transform: scaleX(0);
+      transform-origin: 50% 50%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: 50% 50%;
+    }
+  }
+
   &__link-active {
     @extend %opensans-700;
   }
