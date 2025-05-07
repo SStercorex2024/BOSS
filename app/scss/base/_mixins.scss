@@ -1,13 +1,19 @@
+@mixin mediaBg() {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
 @mixin hover {
-  @media (any-hover: hover) {
+  @media (hover: hover) {
     &:hover {
       @content;
     }
   }
-}
 
-@mixin mediaBg() {
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    @content;
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
   }
 }
