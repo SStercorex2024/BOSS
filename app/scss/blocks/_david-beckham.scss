@@ -1,0 +1,35 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.david-beckham {
+  padding: 90px 0 233px;
+  &__inner {
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 90px;
+  }
+  &__title {
+    margin-bottom: 5px;
+  }
+  &__description {
+    font-size: 16px;
+  }
+  &__description--bg {
+    @extend %lora-400;
+    padding: 20px 27px;
+    background-color: vars.$color-blue;
+    color: vars.$color-light;
+    width: 417px;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  &__link {
+    margin-right: 2px;
+    text-align: center;
+  }
+}
