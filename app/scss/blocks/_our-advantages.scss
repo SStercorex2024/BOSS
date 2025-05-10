@@ -1,0 +1,45 @@
+@use "../base/vars";
+
+.our-advantages {
+  background-color: vars.$color-blue;
+  &__inner {
+    position: relative;
+    display: grid;
+    padding: 0 20px 0 40px;
+  }
+  &__img {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+  }
+  &__content {
+    padding: 50px 0 58px;
+    margin-left: auto;
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__list {
+    column-count: 2;
+    column-gap: 80px;
+  }
+  &__item {
+    padding-left: 32px;
+    position: relative;
+    color: vars.$color-light;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 11px;
+      width: 4px;
+      height: 5px;
+      border-radius: 3px;
+      background-color: vars.$color-light;
+    }
+  }
+  &__item + .our-advantages__item {
+    margin-top: 30px;
+  }
+}
