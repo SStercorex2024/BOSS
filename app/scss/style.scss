@@ -9,13 +9,18 @@
 
 //blocks
 @use "blocks/header";
-@use "blocks/menu";
+@use "blocks/nav";
 @use "blocks/logo";
 @use "blocks/discount";
 @use "blocks/lang-switcher";
 @use "blocks/utility-icons";
 @use "blocks/hero";
 @use "blocks/new-collection";
+@use "blocks/join-us";
+@use "blocks/david-beckham";
+@use "blocks/our-advantages";
+@use "blocks/our-blog";
+
 
 //components
 @use "components/btn";

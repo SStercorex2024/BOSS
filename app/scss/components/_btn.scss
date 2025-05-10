@@ -1,17 +1,20 @@
-@use '../base/vars';
-@use '../base/mixins';
+@use "../base/vars";
+@use "../base/mixins";
 
 .btn {
-
-  transition: opacity 0.3s ease-in-out;
+  transition: color 0.3s ease-in, opacity 0.3s ease-in-out;
 
   &--primary {
     color: vars.$color-black;
     background-color: vars.$color-light;
-    padding-top: 12.5px;
-    padding-bottom: 12.5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border: 1px solid vars.$color-black;
 
+    @include mixins.focus {
+      color: vars.$color-focus;
+      outline: none;
+    }
   }
 
   &--accent {
@@ -20,6 +23,10 @@
     padding-top: 12.5px;
     padding-bottom: 12.5px;
     border-radius: 3px;
+
+    @include mixins.focus {
+      background-color: vars.$color-focus;
+    }
   }
 
   @include mixins.hover {

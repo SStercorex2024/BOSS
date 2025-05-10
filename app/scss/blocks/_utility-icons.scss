@@ -1,3 +1,6 @@
+@use "../base/vars";
+@use "../base/mixins";
+
 .utility-icons {
   &__list {
     display: flex;
@@ -5,6 +8,14 @@
   }
 
   &__item {
-
+    display: flex;
+    justify-content: center;
+  }
+  &__link {
+    transition: background-color 0.3s ease-in-out;
+    @include mixins.focus {
+      outline: none;
+      background-color: vars.$color-focus;
+    }
   }
 }

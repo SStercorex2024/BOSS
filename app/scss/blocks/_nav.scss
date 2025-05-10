@@ -1,16 +1,23 @@
-@use '../base/mixins' as *;
-@use '../base/vars';
+@use "../base/mixins";
+@use "../base/vars";
 
-.menu {
-  display: flex;
-  column-gap: 30px;
-  text-transform: uppercase;
+.nav {
+  &__list {
+    display: flex;
+    column-gap: 30px;
+    text-transform: uppercase;
+  }
 
   &__link {
     position: relative;
 
+    @include mixins.focus {
+      outline: none;
+      color: vars.$color-focus;
+    }
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
