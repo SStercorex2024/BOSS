@@ -33,10 +33,6 @@ picture {
   display: block;
 }
 
-menu {
-  list-style: none;
-}
-
 /* Для списків прибираємо маркери */
 ul {
   list-style: none;
@@ -85,27 +81,41 @@ select {
 }
 
 /* Посилання */
-a, a:link, a:visited {
-  text-decoration: none; /* Прибираємо підкреслення для посилань */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none; /* Підкреслення при наведенні також прибираємо */
+  text-decoration: none;
 }
 
 /* Загальні стилі для блокових елементів */
-aside, nav, footer, header, section, main {
+aside,
+nav,
+footer,
+header,
+section,
+main {
   display: block;
 }
 
 /* Скидаємо розміри шрифтів для заголовків та абзаців */
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-size: inherit;
   font-weight: inherit;
 }
 
 /* Всі списки без маркерів */
-ul, ul li {
+ul,
+ul li {
   list-style: none;
 }
 
@@ -115,7 +125,8 @@ img {
 }
 
 /* Зображення та svg мають бути адаптивними */
-img, svg {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
@@ -126,11 +137,22 @@ address {
 }
 
 /* Скидання стилів для форм */
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   background-color: transparent;
+}
+
+/* Скидання стилів для плейсхолдерів */
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+  opacity: 1;
+  font-family: inherit;
 }
 
 /* Прибираємо очищення в Internet Explorer для інпутів */
@@ -139,8 +161,8 @@ input::-ms-clear {
 }
 
 /* Стилі для кнопок та інпутів */
-/* Стилі для кнопок та інпутів */
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   all: unset;
   background: transparent;
   border: none;
@@ -156,8 +178,10 @@ button, input[type="submit"] {
 }
 
 /* При активації або фокусуванні на інпуті чи кнопці прибираємо контур */
-input:focus, input:active,
-button:focus, button:active {
+input:focus,
+input:active,
+button:focus,
+button:active {
   outline: none;
 }
 
@@ -176,5 +200,3 @@ label {
 legend {
   display: block;
 }
-
-
