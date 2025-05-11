@@ -1,0 +1,39 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.copy {
+  background-color: vars.$color-black;
+  color: vars.$color-light;
+  font-size: 11px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__caption {
+  }
+  &__box {
+    display: flex;
+    column-gap: 15px;
+  }
+  &__link {
+    position: relative;
+    transition: color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+
+    @include mixins.focus {
+      color: vars.$color-focus;
+      outline: none;
+    }
+    @include mixins.hover {
+      opacity: 0.5;
+    }
+  }
+  &__link + .copy__link {
+    padding-left: 15px;
+
+    &::after {
+      position: absolute;
+      content: "|";
+      left: 0;
+    }
+  }
+}
