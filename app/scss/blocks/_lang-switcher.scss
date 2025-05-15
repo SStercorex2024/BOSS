@@ -12,6 +12,10 @@
     &:not(.lang-switcher__link-active) {
       @include mixins.focus {
         color: vars.$color-focus;
+        &:focus::after {
+          transform: scaleX(1);
+          transform-origin: 50% 50%;
+        }
       }
     }
 
