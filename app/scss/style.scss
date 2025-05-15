@@ -22,7 +22,10 @@
 @use "blocks/our-blog";
 @use "blocks/footer";
 @use "blocks/copy";
-
+@use "blocks/appointment";
+@use "blocks/bread-crumbs";
+@use "blocks/collections";
+@use "blocks/pagination";
 
 //components
 @use "components/btn";
