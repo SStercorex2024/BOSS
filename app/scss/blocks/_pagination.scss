@@ -1,0 +1,55 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.pagination {
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2px;
+  }
+  &__item--decor {
+    display: block;
+    align-content: center;
+    text-align: center;
+    width: 42px;
+    aspect-ratio: 1;
+  }
+  &__item--disabled {
+    display: none;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    aspect-ratio: 1;
+    font-size: 16px;
+    border-radius: 8px;
+    color: vars.$color-black;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+
+    &:not(.pagination__link--active) {
+      @include mixins.hover {
+        color: vars.$color-light;
+        background-color: vars.$color-gray;
+        opacity: 0.8;
+      }
+      @include mixins.focus {
+        outline: none;
+        color: vars.$color-light;
+        background-color: vars.$color-gray;
+        opacity: 0.8;
+      }
+    }
+  }
+  &__link--active {
+    outline: none;
+    color: vars.$color-light;
+    background-color: vars.$color-gray;
+  }
+  &__decor {
+    color: vars.$color-gray;
+  }
+}

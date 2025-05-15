@@ -28,9 +28,12 @@
       transform-origin: 50% 50%;
       transition: transform 0.3s ease-in-out;
     }
-    &:hover::after {
-      transform: scaleX(1);
-      transform-origin: 50% 50%;
+
+    @include mixins.hover {
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: 50% 50%;
+      }
     }
 
     @include mixins.focus {

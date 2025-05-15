@@ -1,0 +1,113 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.collections {
+  &__hero {
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__title {
+    font-size: 54px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+  &__content {
+    row-gap: 40px;
+    grid-template-areas:
+      "aa aa ac ab"
+      "aa aa ad ae"
+      "ca cb cc cc"
+      "cd ce cc cc"
+      "fa fb fc fd";
+  }
+  &__items {
+    position: relative;
+    &:nth-child(1) {
+      grid-area: aa;
+    }
+    &:nth-child(2) {
+      grid-area: ac;
+    }
+    &:nth-child(3) {
+      grid-area: ab;
+    }
+    &:nth-child(4) {
+      grid-area: ad;
+    }
+    &:nth-child(5) {
+      grid-area: ae;
+    }
+    &:nth-child(6) {
+      grid-area: ca;
+      margin-top: -130px;
+      height: fit-content;
+    }
+    &:nth-child(7) {
+      grid-area: cb;
+      margin-top: -130px;
+      height: fit-content;
+    }
+    &:nth-child(8) {
+      grid-area: cc;
+    }
+    &:nth-child(9) {
+      grid-area: cd;
+    }
+    &:nth-child(10) {
+      grid-area: ce;
+    }
+    &:nth-child(11) {
+      grid-area: fa;
+    }
+    &:nth-child(12) {
+      grid-area: fb;
+    }
+    &:nth-child(13) {
+      grid-area: fc;
+    }
+    &:nth-child(14) {
+      grid-area: fd;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    color: vars.$color-light-gray;
+
+    transition: color 0.3s ease-in-out;
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @include mixins.hover {
+      animation: pulse 0.6s ease-in-out infinite;
+      color: #e63946;
+    }
+    @include mixins.focus {
+      animation: pulse 0.6s ease-in-out infinite;
+      color: #e63946;
+    }
+  }
+  &__btn--active {
+    color: #e63946;
+  }
+}
+.collections .bread-crumbs {
+  padding: 50px 0 90px;
+}
+
+.collections .pagination {
+  padding: 20px 0 100px;
+}
