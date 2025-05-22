@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "img": "1",
+      "name": "LEATHER TRAINERS",
+      "price": "€ 299,00"
+    },
+    {
+      "img": "2",
+      "name": "SLIM-FIT COAT IN CASHMERE",
+      "price": "€ 1.700,00"
+    },
+    {
+      "img": "3",
+      "name": "T-SHIRT IN SOFT LINEN",
+      "price": "€ 139,95"
+    },
+    {
+      "img": "1",
+      "name": "LEATHER TRAINERS",
+      "price": "€ 299,00"
+    },
+    {
+      "img": "2",
+      "name": "SLIM-FIT COAT IN CASHMERE",
+      "price": "€ 1.700,00"
+    },
+    {
+      "img": "3",
+      "name": "T-SHIRT IN SOFT LINEN",
+      "price": "€ 139,95"
+    },
+    {
+      "img": "1",
+      "name": "LEATHER TRAINERS",
+      "price": "€ 299,00"
+    },
+    {
+      "img": "2",
+      "name": "SLIM-FIT COAT IN CASHMERE",
+      "price": "€ 1.700,00"
+    },
+    {
+      "img": "3",
+      "name": "T-SHIRT IN SOFT LINEN",
+      "price": "€ 139,95"
+    }
+  ]
+}
