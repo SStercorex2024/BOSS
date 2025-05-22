@@ -1,0 +1,203 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.trousers {
+  &__wrapper {
+    margin: 80px 40px 150px 0;
+    grid-template-columns: 2fr 1.1fr;
+  }
+  &__imgs {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    picture {
+      width: max-content;
+    }
+    picture:nth-child(2) {
+      grid-column: 2;
+      grid-row: span 2;
+    }
+  }
+  &__img {
+    height: max-content;
+    width: 100%;
+  }
+  &__content {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    color: vars.$color-gray;
+  }
+  &__title {
+    color: vars.$color-black;
+    margin-bottom: 30px;
+  }
+  &__price {
+    @extend %opensans-700;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  &__name {
+    @extend %opensans-700;
+    margin-bottom: 30px;
+  }
+  &__list {
+  }
+  &__term {
+    @extend %opensans-700;
+    margin-bottom: 5px;
+  }
+  &__def {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  &__text {
+    margin-bottom: 30px;
+  }
+  &__characteristics-list {
+    margin-bottom: 30px;
+  }
+  &__bts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 52px;
+    gap: 6px;
+    margin-top: auto;
+  }
+  &__btn {
+    border: 1px solid vars.$color-gray;
+    border-radius: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease-in-out;
+    @include mixins.hover {
+      border-color: vars.$color-focus-75;
+    }
+    @include mixins.focus {
+      border-color: vars.$color-focus-75;
+    }
+  }
+  &__btn-half {
+    gap: 10px;
+    padding: 9px;
+  }
+  &__btn-half:nth-child(2) {
+    svg {
+      transition: color 0.3s ease-in-out;
+    }
+    @include mixins.hover {
+      svg {
+        color: red;
+      }
+    }
+    @include mixins.focus {
+      svg {
+        color: red;
+      }
+    }
+  }
+  &__btn-full {
+    padding: 12.5px;
+    font-size: 20px;
+    grid-column: span 2;
+  }
+}
+.radio {
+  display: flex;
+  column-gap: 30px;
+  &__label {
+    padding-left: 26px;
+    position: relative;
+
+    @include mixins.hover {
+      .radio__style {
+        border-color: vars.$color-focus;
+      }
+    }
+  }
+  &__box {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked + .radio__style::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      + .radio__style {
+        border-color: vars.$color-focus;
+      }
+    }
+  }
+  &__style {
+    position: absolute;
+    margin-top: 2px;
+    margin-left: -26px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    border: 1px solid vars.$color-gray;
+  }
+}
+.checkbox {
+  display: flex;
+  column-gap: 10px;
+  &__label {
+    position: relative;
+    padding-left: 20px;
+    @include mixins.hover {
+      .checkbox__style {
+        border-color: vars.$color-focus;
+      }
+    }
+  }
+  &__box {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:checked + .checkbox__style::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 1px;
+      background-color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      + .checkbox__style {
+        border-color: vars.$color-focus;
+      }
+    }
+  }
+  &__style {
+    position: absolute;
+    margin-top: 2px;
+    margin-left: -20px;
+    width: 15px;
+    height: 15px;
+    border-radius: 1px;
+    border: 1px solid vars.$color-gray;
+
+    transition: border-color 0.3s ease-in-out;
+  }
+}
+.trousers .bread-crumbs {
+  margin-top: 50px;
+}
