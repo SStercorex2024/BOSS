@@ -201,3 +201,77 @@
 .trousers .bread-crumbs {
   margin-top: 50px;
 }
+
+.accessories {
+  &__wrapper {
+    position: relative;
+    padding: 40px 0 90px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 934px;
+  }
+  &__inner {
+    padding-top: 40px;
+  }
+  &__title {
+    text-align: center;
+    padding-bottom: 30px;
+    color: vars.$color-black;
+    border-bottom: 2px solid vars.$color-light-gray;
+    width: 890px;
+  }
+  &__slider {
+    overflow: hidden;
+    max-width: 890px;
+  }
+  &__arrow {
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      outline: none;
+      color: vars.$color-focus;
+    }
+  }
+  &__arrow-next {
+    position: absolute;
+    right: 0;
+    top: 47.5%;
+  }
+  &__arrow-prev {
+    position: absolute;
+    top: 47.5%;
+    left: 0;
+    width: 10px;
+    height: 18px;
+  }
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      cursor: grab;
+    }
+  }
+  &__slide-img {
+    margin-bottom: 20px;
+  }
+  &__slide-title {
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
+  }
+  &__slide-price {
+    margin-top: auto;
+    @extend %opensans-700;
+  }
+}
