@@ -34,7 +34,15 @@
     }
 
     @include mixins.hover {
-      &:hover::after {
+      &:not(.bread-crumbs__link--active)::after {
+        transform: scaleX(1);
+        transform-origin: 50% 50%;
+      }
+    }
+    @include mixins.focus {
+      outline: none;
+
+      &:not(.bread-crumbs__link--active)::after {
         transform: scaleX(1);
         transform-origin: 50% 50%;
       }
