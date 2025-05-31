@@ -1,0 +1,98 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.page-404 {
+  &__container {
+    padding: 40px 18px 40px 40px;
+    margin-inline: auto;
+  }
+  &__inner {
+    display: flex;
+    column-gap: 35px;
+    justify-content: center;
+  }
+  &__box-left {
+  }
+  &__img-left {
+  }
+  &__box-center {
+    display: flex;
+    flex-direction: column;
+    span {
+      display: inline-block;
+      margin-top: 29.268%;
+      @extend %lora-400;
+      font-size: 160px;
+      line-height: 110%;
+    }
+  }
+  &__text {
+    position: relative;
+    display: flex;
+    width: 732px;
+    margin-top: auto;
+    text-transform: uppercase;
+
+    img {
+      padding: 10px;
+      margin-top: auto;
+      margin-left: auto;
+    }
+  }
+  &__link {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    border-radius: 18px;
+    transition: box-shadow 0.3s ease-in-out;
+
+    @include mixins.hover {
+      box-shadow: 0 0 24px rgba(227, 198, 51, 0.75);
+    }
+  }
+  &__title {
+    display: inline-flex;
+    padding: 10px;
+    @extend %lora-400;
+    font-size: 48px;
+    line-height: 120%;
+  }
+  &__box-right {
+  }
+  &__row {
+    opacity: 0.2;
+    display: flex;
+    white-space: nowrap;
+    column-gap: 100px;
+    animation-name: moving;
+    animation-duration: 14s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  &__row-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  &__row-box {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  &__row-text {
+    @extend %lora-400;
+    font-size: 160px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
