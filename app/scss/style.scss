@@ -5,7 +5,6 @@
 @use "base/fonts";
 @use "base/global";
 @use "../../node_modules/swiper/swiper-bundle.css";
-@use "base/container";
 @use "base/base";
 
 //blocks
@@ -29,6 +28,7 @@
 @use "blocks/pagination";
 @use "blocks/product";
 @use "blocks/page-404";
+@use "blocks/blogs";
 
 //components
 @use "components/btn";

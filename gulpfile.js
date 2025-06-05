@@ -20,6 +20,8 @@ const nunjucksRender = require("gulp-nunjucks-render");
 const gulpData = require("gulp-data");
 const fs = require("fs");
 const path = require("path");
+const postcss = require("gulp-postcss");
+const pxtorem = require("postcss-pxtorem");
 
 function nunjucks(done) {
   const njkFolder = "app/njk-pages/";
@@ -87,20 +89,20 @@ function images() {
   const jpegOutput = src(source, { base: "app/img/src" })
     .pipe(plumber())
     .pipe(newer({ dest: destination, ext: ".jpg" }))
-    .pipe(imagemin([imagemin.mozjpeg({ quality: 85, progressive: true })]))
+    .pipe(imagemin([imagemin.mozjpeg({ quality: 95, progressive: true })]))
     .pipe(rename({ extname: ".jpg" }))
     .pipe(dest(destination));
 
   const avifOutput = src(source, { base: "app/img/src" })
     .pipe(plumber())
     .pipe(newer({ dest: destination, ext: ".avif" }))
-    .pipe(avif({ quality: 75 }))
+    .pipe(avif({ quality: 95 }))
     .pipe(dest(destination));
 
   const webpOutput = src(source, { base: "app/img/src" })
     .pipe(plumber())
     .pipe(newer({ dest: destination, ext: ".webp" }))
-    .pipe(webp({ quality: 85 }))
+    .pipe(webp({ quality: 95 }))
     .pipe(dest(destination));
 
   return merge(jpegOutput, avifOutput, webpOutput);
@@ -112,13 +114,30 @@ function styles() {
     .pipe(
       autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true })
     ) // Потом автопрефиксер
+    .pipe(
+      postcss([
+        pxtorem({
+          rootValue: 16, // Базовый размер шрифта
+          unitPrecision: 5,
+          propList: ["*"], // Преобразовывать все свойства
+          selectorBlackList: [], // Селекторы, которые нужно исключить
+          replace: true,
+          mediaQuery: false,
+          minPixelValue: 0,
+        }),
+      ])
+    )
     .pipe(concat("style.min.css")) // Потом объединение
     .pipe(dest("app/css"))
     .pipe(browserSync.stream());
 }
 
 function scripts() {
-  return src(["node_modules/swiper/swiper-bundle.js", "app/js/main.js"])
+  return src([
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+    "node_modules/swiper/swiper-bundle.js",
+    "app/js/main.js",
+  ])
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js"))
@@ -143,11 +162,13 @@ function watching() {
   );
 }
 
-function bilding() {
+function building() {
   return src(
     [
       "app/css/style.min.css",
       "app/img/*.*",
+      "app/img/**/*.*",
+      "!app/img/src/**",
       "app/fonts/*.woff2",
       "app/js/main.min.js",
       "app/index.html",
@@ -167,11 +188,11 @@ exports.watching = watching;
 exports.images = images;
 exports.sprites = sprites;
 exports.pages = pages;
-exports.bilding = bilding;
+exports.building = building;
 exports.cleanDist = cleanDist;
 exports.nunjucks = nunjucks;
 
-exports.bild = series(cleanDist, bilding);
+exports.build = series(cleanDist, building);
 exports.default = parallel(
   styles,
   scripts,

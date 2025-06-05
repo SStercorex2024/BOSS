@@ -1,0 +1,18 @@
+{% for item in items %}
+<div class="blogs__card">
+    <picture>
+        <source srcset="img/blogs/blog-{{item.img}}.avif" type="image/avif">
+        <source srcset="img/blogs/blog-{{item.img}}.webp" type="image/webp">
+        <img class="blogs__card-img" src="img/blogs/blog-{{item.img}}.png" alt="Alt text" loading="lazy">
+    </picture>
+    <a class="blogs__card-category" href="#!">
+        {{item.category}}
+    </a>
+    <a class="blogs__card-title" href="#!">
+        {{item.title}}
+    </a>
+    <p class="blogs__card-date">
+        {{item.date}}
+     </p>
+</div>
+{% endfor %}
