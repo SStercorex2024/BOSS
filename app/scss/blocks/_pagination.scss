@@ -18,6 +18,12 @@
   &__item--disabled {
     display: none;
   }
+  &__item--next {
+    @include mixins.hover {
+      transition: color 0.3s ease-in-out;
+      color: vars.$color-light;
+    }
+  }
   &__link {
     display: flex;
     justify-content: center;

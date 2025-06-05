@@ -1,0 +1,198 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.blogs {
+  .bread-crumbs {
+    margin: 50px auto;
+  }
+  &__top {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 1px solid vars.$color-black-15;
+    border-bottom: 1px solid vars.$color-black-15;
+    display: flex;
+    column-gap: 40px;
+  }
+  &__top-img {
+    max-width: min-content;
+  }
+  &__top-textbox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  &__top-category {
+    font-size: 14px;
+    line-height: 140%;
+    padding: 8px 24px;
+    border: 1px solid vars.$color-black-15;
+    align-self: flex-start;
+    transition: all 0.3s ease-in-out;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
+  }
+  &__top-title {
+    font-size: 48px;
+    line-height: 120%;
+    @extend %lora-400;
+    text-transform: uppercase;
+  }
+  &__top-desc {
+    opacity: 0.4;
+    font-size: 24px;
+    line-height: 130%;
+    max-width: 660px;
+  }
+  &__top-link {
+    padding: 32px 64px;
+    margin-top: auto;
+    text-transform: uppercase;
+    align-self: flex-start;
+    font-size: 24px;
+    border: 1px solid vars.$color-black;
+  }
+  &__row {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__row-contentbox {
+    display: flex;
+    align-items: center;
+  }
+  &__row-news {
+    @extend %lora-400;
+    font-size: 32px;
+    line-height: 130%;
+  }
+  &__row-btns {
+    display: flex;
+    column-gap: 20px;
+  }
+  &__row-btn {
+    display: flex;
+    color: vars.$color-black;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+  }
+  &__card-img {
+    max-width: max-content;
+    margin-bottom: 20px;
+  }
+  &__card-category {
+    font-size: 14px;
+    line-height: 140%;
+    padding: 8px 24px;
+    border: 1px solid vars.$color-black-15;
+    margin-bottom: 16px;
+    align-self: flex-start;
+    transition: all 0.3s ease-in-out;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
+  }
+  &__card-title {
+    @extend %lora-400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 8px;
+    transition: all 0.3s ease-in-out;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
+  }
+  &__card-date {
+    font-size: 16px;
+    line-height: 140%;
+    color: vars.$color-black-40;
+    margin-top: auto;
+  }
+  .pagination {
+    margin: 50px auto;
+  }
+}
+.category {
+  width: 334px;
+  padding: 2px 32px 14px 4px;
+  border-bottom: 1px solid vars.$color-black-40;
+  background-color: vars.$color-light;
+  appearance: none;
+  color: vars.$color-black-40;
+
+  &__wrapper {
+    margin-left: auto;
+    margin-right: 32px;
+    position: relative;
+    svg {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__option {
+    line-height: 120%;
+    color: vars.$color-black-40;
+  }
+}
+.search {
+  width: 334px;
+  margin-right: 100px;
+  padding: 2px 32px 14px 4px;
+  border-bottom: 1px solid vars.$color-black-40;
+  background-color: vars.$color-light;
+  line-height: 120%;
+  color: vars.$color-black-40;
+  position: relative;
+  &__input {
+    line-height: 120%;
+    color: vars.$color-black-40;
+    caret-color: vars.$color-focus;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    &::placeholder {
+      color: vars.$color-black-40;
+    }
+    &:not(:placeholder-shown) {
+      color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      outline: none;
+      border-color: vars.$color-focus;
+    }
+    @include mixins.hover {
+      color: vars.$color-focus;
+      border-color: vars.$color-focus;
+    }
+  }
+  svg {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

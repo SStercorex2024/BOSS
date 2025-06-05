@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<!--=include head.html -->
+
+<body>
+    <!--=include discount.html -->
+    <!--=include header.html -->
+    <main class="main">
+        <!--=include brad-crumbs.html -->
+        <section class="blogs">
+            <div class="container-big">
+                <div class="blogs__top">
+                    <picture>
+                        <source srcset="img/blogs/blogs-1.avif" type="image/avif">
+                        <source srcset="img/blogs/blogs-1.webp" type="image/webp">
+                        <img class="blogs__top-img" src="img/blogs/blogs-1.jpg" alt="Alt text">
+                    </picture>
+                    <div class="blogs__top-textbox">
+                        <a class="blogs__top-category" href="#">
+                            Menswear
+                        </a>
+                        <h2 class="blogs__top-title">
+                            Timeless Elegance: Inside the BOSS x&nbsp;David Beckham Collection
+                        </h2>
+                        <p class="blogs__top-desc">
+                            Discover how David Beckham and BOSS blend classic tailoring with modern sophistication. This
+                            collection features premium fabrics, clean lines, and effortless style&nbsp;&mdash; perfect
+                            for today&rsquo;s confident man.
+                        </p>
+                        <a class="blogs__top-link btn" href="#">
+                            Read the article
+                        </a>
+                    </div>
+                </div>
+                <div class="blogs__row">
+                    <p class="blogs__row-news">
+                        Lates news
+                    </p>
+                    <div class="category__wrapper">
+                        <form>
+                            <select class="category" name="category" id="category">
+                                <option class="category__option-selected" value="" selected disabled hidden>
+                                    Categories
+                                </option>
+                                <option id="option" class="category__option" value="modern">Modern</option>
+                                <option class="category__option" value="collaboration">Collaboration</option>
+                                <option class="category__option" value="fabrics">Fabrics</option>
+                                <option class="category__option" value="menswear">Menswear</option>
+                            </select>
+                            <svg width="18" height="18">
+                                <use xlink:href="img/sprite.svg#categories-arrow-right"></use>
+                            </svg>
+                        </form>
+                    </div>
+                    <search>
+                        <form class="search">
+                            <input class="search__input" type="search" placeholder="Search">
+                            <button class="search__btn btn" type="submit">
+                                <svg width="18" height="18">
+                                    <use xlink:href="img/sprite.svg#search-icon"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </search>
+                    <div class="blogs__row-btns">
+                        <button class="blogs__row-btn btn" type="button">
+                            <svg width="40" height="40">
+                                <use xlink:href="img/sprite.svg#icon-grid"></use>
+                            </svg>
+                        </button>
+                        <button class="blogs__row-btn btn" type="button">
+                            <svg width="40" height="40">
+                                <use xlink:href="img/sprite.svg#icon-list"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="blogs__cards">
+                    <!--=include rendered/blogs-card.html -->
+                </div>
+                <!--=include partials/pagination.html -->
+            </div>
+        </section>
+    </main>
+    <!--=include footer.html -->
+    <!--=include copy.html -->
+</body>
+
+
+
+</html>

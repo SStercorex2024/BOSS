@@ -1,9 +1,0 @@
-@use "../base/vars";
-
-.container {
-  margin: 0 auto;
-  padding-inline: vars.$container-padding;
-
-  max-width: vars.$container-width;
-  width: 100%;
-}
