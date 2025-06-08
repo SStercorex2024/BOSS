@@ -18,6 +18,15 @@ body {
   max-width: vars.$container-big-width;
   width: 100%;
 }
+
+.container-l {
+  margin-inline: auto;
+  padding-inline: vars.$container-padding;
+
+  max-width: vars.$container-l-width;
+  width: 100%;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
