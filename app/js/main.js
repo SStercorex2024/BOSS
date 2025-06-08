@@ -1,16 +1,5 @@
-const swiper = new Swiper(".accessories__slider", {
-  slidesPerView: 3,
-  centeredSlides: true,
-  spaceBetween: 40,
-  loop: true,
+//= include modules/swiper.js
+//=include modules/swiperReviews.js
 
-  navigation: {
-    nextEl: ".accessories__arrow-next",
-    prevEl: ".accessories__arrow-prev",
-  },
-
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-});
+if (typeof swiperInit === "function") swiperInit();
+if (typeof swiperReviews === "function") swiperReviews();

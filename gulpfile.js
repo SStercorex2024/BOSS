@@ -89,20 +89,20 @@ function images() {
   const jpegOutput = src(source, { base: "app/img/src" })
     .pipe(plumber())
     .pipe(newer({ dest: destination, ext: ".jpg" }))
-    .pipe(imagemin([imagemin.mozjpeg({ quality: 95, progressive: true })]))
+    .pipe(imagemin([imagemin.mozjpeg({ quality: 85, progressive: true })]))
     .pipe(rename({ extname: ".jpg" }))
     .pipe(dest(destination));
 
   const avifOutput = src(source, { base: "app/img/src" })
     .pipe(plumber())
     .pipe(newer({ dest: destination, ext: ".avif" }))
-    .pipe(avif({ quality: 95 }))
+    .pipe(avif({ quality: 75 }))
     .pipe(dest(destination));
 
   const webpOutput = src(source, { base: "app/img/src" })
     .pipe(plumber())
     .pipe(newer({ dest: destination, ext: ".webp" }))
-    .pipe(webp({ quality: 95 }))
+    .pipe(webp({ quality: 85 }))
     .pipe(dest(destination));
 
   return merge(jpegOutput, avifOutput, webpOutput);
@@ -138,6 +138,9 @@ function scripts() {
     "node_modules/swiper/swiper-bundle.js",
     "app/js/main.js",
   ])
+    .pipe(plumber())
+    .pipe(include())
+    .on("error", console.log)
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js"))
