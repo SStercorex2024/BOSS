@@ -2,6 +2,7 @@
 @use "../base/mixins";
 
 .reviews {
+  overflow-x: clip;
   .pagination {
     padding: 60px;
   }
@@ -69,22 +70,48 @@
   &__card-star {
     display: flex;
   }
-  &__card-customer {
-    display: flex;
+  &__card-link {
+    display: inline-flex;
     column-gap: 12px;
     margin-bottom: 24px;
+    @include mixins.hover {
+      .reviews__card-avatar {
+        border-color: vars.$color-focus;
+      }
+      .reviews__card-name {
+        color: vars.$color-focus;
+      }
+    }
   }
   &__card-avatar {
+    border: 1px solid transparent;
     border-radius: 50%;
+    transition: border-color 0.3s ease-in-out;
   }
   &__card-name {
     font-size: 24px;
     align-self: center;
+    transition: color 0.3s ease-in-out;
   }
   &__card-imgs {
     display: flex;
     column-gap: 20px;
   }
+  &__card-img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    max-width: 169px;
+
+    &.zoomed {
+      position: fixed;
+      top: 50%;
+      right: 50%;
+      z-index: 10;
+      transform: translate(-50%, -50%) scale(2);
+      cursor: zoom-out;
+    }
+  }
+
   &__card-desc {
     opacity: 0.8;
     max-width: 902px;
@@ -95,9 +122,15 @@
     width: calc(100vw - (100vw - 1500px) / 2);
     margin-bottom: 24px;
   }
-  &__slider-wrapper {
-  }
   &__slide {
+    perspective: 1500px;
+    img {
+      transition: transform 0.3s ease-in-out;
+      transform-style: preserve-3d;
+      @include mixins.hover {
+        transform: rotateY(25deg);
+      }
+    }
   }
   &__rating {
     display: flex;
@@ -113,6 +146,10 @@
     font-size: 16px;
     color: vars.$color-black-40;
     border-bottom: 1px solid vars.$color-black;
+    transition: border-color 0.3s ease-in-out;
+    @include mixins.hover {
+      border-color: vars.$color-focus;
+    }
   }
   &__link {
     display: inline-block;
@@ -120,27 +157,42 @@
     text-transform: uppercase;
     padding: 24px 216px;
     border: 1px solid vars.$color-black;
+    transition: color 0.3s ease-in-out;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
   }
   &__slider-nav {
-    position: relative;
+    position: absolute;
+    left: auto;
+    right: 10px;
     display: flex;
+    align-items: center;
   }
   &__slider-arrow {
+    cursor: pointer;
   }
   &__arrow-next {
+    margin-right: 15px;
   }
   &__arrow-prev {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    color: vars.$color-black;
   }
   &__slider-pagination {
+    color: vars.$color-black-40;
+    font-size: 18px;
+  }
+  .swiper-pagination-total {
+    margin-left: 10px;
+  }
+  .swiper-pagination-current {
+    color: vars.$color-black;
+    margin-right: 10px;
   }
   .container-big {
+    position: relative;
     margin-bottom: 60px;
   }
-}
-.container-l {
 }
 .reviews-top {
   margin-bottom: 60px;
@@ -157,5 +209,9 @@
     font-size: 24px;
     color: vars.$color-black-40;
     border-bottom: 1px solid vars.$color-black;
+    transition: border-color 0.3s ease-in-out;
+    @include mixins.hover {
+      border-color: vars.$color-focus;
+    }
   }
 }
