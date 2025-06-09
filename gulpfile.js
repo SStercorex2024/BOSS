@@ -154,7 +154,7 @@ function watching() {
     },
   });
   watch(["app/scss/**/*.scss"], styles);
-  watch(["app/js/main.js"], scripts);
+  watch(["app/js/main.js", "app/js/modules/**/*.js"], scripts);
   watch(["app/img/sprite/*.svg"], sprites);
   watch("app/img/src/**/*.{jpg,jpeg,png}", images);
   watch(["app/components/*", "app/pages/*"], pages);
