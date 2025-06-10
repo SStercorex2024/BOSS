@@ -1,0 +1,105 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.blog-one {
+  .bread-crumbs {
+    padding: 50px 0;
+  }
+  .bread-crumbs__list {
+    justify-content: center;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  b,
+  li,
+  ul {
+    max-width: 1220px;
+  }
+  picture {
+    padding: 20px 0;
+    border-top: 1px solid vars.$color-gray-alt;
+    border-bottom: 1px solid vars.$color-gray-alt;
+  }
+  picture:first-of-type {
+    padding: 50px 0;
+  }
+  h1 {
+    @extend %lora-400;
+    margin-bottom: 22px;
+    font-size: 96px;
+    line-height: 120%;
+  }
+  h3 {
+    font-size: 32px;
+    @extend %lora-400;
+    margin-top: 40px;
+  }
+  h3:first-of-type {
+    margin-bottom: 60px;
+  }
+  h3:last-of-type {
+    margin-bottom: 50px;
+  }
+  h2 {
+    font-size: 40px;
+    @extend %lora-400;
+    margin-bottom: 40px;
+  }
+  p {
+    margin-top: 20px;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  &__link {
+    padding: 8px 24px;
+    border: 1px solid vars.$color-gray-alt;
+    font-size: 14px;
+    line-height: 140%;
+    margin-right: 40px;
+  }
+  &__date {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 160%;
+    color: vars.$color-gray-alt;
+    margin-right: 20px;
+    padding-right: 20px;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 28px;
+      background-color: vars.$color-gray-alt;
+    }
+  }
+  &__list {
+    display: flex;
+    column-gap: 16px;
+  }
+  &__item {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 4px;
+      font-size: 18px;
+      line-height: 160%;
+      color: vars.$color-gray-alt;
+      transition: color 0.3s ease-in;
+      @include mixins.hover {
+        color: vars.$color-focus;
+      }
+    }
+  }
+}
